@@ -1,0 +1,61 @@
+---
+import { Award } from '@lucide/astro';
+---
+
+<header class="relative overflow-hidden px-6 pb-32 pt-48 md:pb-80 md:pt-80">
+  <div class="relative z-10 mx-auto max-w-7xl">
+    <div class="flex flex-col items-center gap-12 lg:flex-row">
+      <!-- Left Content -->
+      <div class="fade-in-section is-visible lg:w-1/2">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-gray-900/10 px-4 py-2 text-sm font-medium text-gray-900">
+          <Award class="h-4 w-4" />
+          Charlotte Hornets 2025 Innovation Summit Winner
+        </div>
+
+        <h1 class="mb-6 font-montserrat text-3xl font-thin leading-tight tracking-tighter text-gray-900 md:text-4xl">
+          Stop Recycling<br />
+          Contamination<br />
+          at the Source
+        </h1>
+
+        <p class="mb-8 max-w-lg text-lg text-gray-800/80">
+          Smart bin technology that retrofits your existing bins, prevents contamination, and
+          provides real-time data insights.
+        </p>
+
+        <div class="space-y-3">
+          <a
+            href="#contact"
+            class="inline-block rounded-full bg-gray-900 px-10 py-3 text-sm font-medium text-white shadow-xl transition-all hover:-translate-y-1 hover:bg-gray-800 hover:shadow-2xl"
+          >
+            Request a Demo
+          </a>
+          <p class="pl-1 text-xs font-medium uppercase tracking-wide text-gray-800/60">
+            Available for organizations now
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="fade-in-section is-visible relative lg:w-1/2" style="transition-delay: 200ms;">
+        <div class="relative">
+          <img 
+            src="/images/topperstopper.png" 
+            alt="Topper Stopper Smart Recycling Device" 
+            class="mx-auto w-full max-w-xl scale-150 drop-shadow-2xl"
+          />
+          <!-- Floating Stats -->
+          <div class="absolute -right-4 top-1/4 hidden rounded-2xl bg-white/80 p-4 shadow-xl backdrop-blur md:block animate-float-slow">
+            <div class="text-3xl font-bold text-gray-900">60%</div>
+            <div class="text-sm text-gray-600">Less Contamination</div>
+          </div>
+
+          <div class="absolute -bottom-4 -left-4 hidden rounded-2xl bg-white/80 p-4 shadow-xl backdrop-blur md:block animate-float-delayed">
+            <div class="text-3xl font-bold text-gray-900">30%</div>
+            <div class="text-sm text-gray-600">Fewer Pickups</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

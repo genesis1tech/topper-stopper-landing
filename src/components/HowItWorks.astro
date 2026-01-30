@@ -1,0 +1,56 @@
+---
+import { ScanEye, ShieldCheck, BarChart3 } from '@lucide/astro';
+
+const steps = [
+  {
+    icon: ScanEye,
+    step: 'Step 1',
+    title: 'Detect & Identify',
+    description:
+      'Smart sensors detect and identify materials being placed in the bin using advanced AI technology.',
+  },
+  {
+    icon: ShieldCheck,
+    step: 'Step 2',
+    title: 'Prevent Contamination',
+    description:
+      'Non-recyclable items trigger visual cues and the access door stays closed, ensuring only correct materials enter.',
+  },
+  {
+    icon: BarChart3,
+    step: 'Step 3',
+    title: 'Collect & Analyze',
+    description:
+      'Real-time data on quantity, weight, and bin fullness is collected and sent via the RSMS monitoring system.',
+  },
+];
+---
+
+<section id="how-it-works" class="mx-auto max-w-7xl px-6 py-24">
+  <div class="fade-in-section mb-16 text-center">
+    <h2 class="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+      How Topper Stopper™ Works
+    </h2>
+    <p class="mx-auto max-w-2xl text-xl text-gray-800/80">
+      Intelligent technology that makes recycling right effortless
+    </p>
+  </div>
+
+  <div class="grid gap-8 md:grid-cols-3">
+    {
+      steps.map(({ icon: Icon, step, title, description }, index) => (
+        <div
+          class="glass-panel fade-in-section rounded-[2.5rem] p-8 transition-transform duration-500 hover:scale-[1.02]"
+          style={`transition-delay: ${index * 100}ms`}
+        >
+          <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gray-100">
+            <Icon class="h-8 w-8 text-gray-700" />
+          </div>
+          <div class="mb-2 text-sm font-medium text-gray-600">{step}</div>
+          <h3 class="mb-3 text-xl font-semibold text-gray-900">{title}</h3>
+          <p class="leading-relaxed text-gray-800/80">{description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

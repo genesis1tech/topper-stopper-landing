@@ -1,0 +1,93 @@
+---
+import { Puzzle, Activity, BellRing, BrainCircuit, Eye, Gauge } from '@lucide/astro';
+
+const features = [
+  {
+    icon: Puzzle,
+    title: 'The Retrofit',
+    subtitle: 'Universal Compatibility',
+    description: 'Fits most existing bin platforms—no need to purchase new bins. Easy installation in minutes.',
+    stat: 'Universal Fit',
+    delay: '0ms',
+  },
+  {
+    icon: Activity,
+    title: 'The Monitor',
+    subtitle: 'Real-Time Data',
+    description: 'Track quantity, weight, and material types at each recycling bin with advanced sensors.',
+    stat: 'Live Tracking: 24/7',
+    delay: '100ms',
+  },
+  {
+    icon: BellRing,
+    title: 'The Guardian',
+    subtitle: 'Smart Prevention',
+    description: 'AI-powered detection prevents contamination before it happens with visual feedback.',
+    stat: 'Accuracy: 99.9%',
+    delay: '200ms',
+  },
+];
+---
+
+<section id="features" class="mx-auto max-w-7xl px-6 pb-24 pt-12">
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+    {
+      features.map(({ icon: Icon, title, subtitle, description, stat, delay }) => (
+        <div
+          class="glass-panel fade-in-section flex flex-col items-center rounded-[2.5rem] p-10 text-center transition-transform duration-500 hover:scale-[1.02]"
+          style={`transition-delay: ${delay}`}
+        >
+          <div class="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-gray-100 shadow-sm">
+            <Icon class="h-10 w-10 text-gray-700" />
+          </div>
+          <h3 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900">
+            {title}
+            <br />
+            <span class="text-lg font-normal opacity-70">{subtitle}</span>
+          </h3>
+          <p class="mb-6 text-lg leading-relaxed text-gray-800/80">{description}</p>
+          <div class="mt-auto w-full border-t border-gray-900/10 pt-6 text-sm font-medium uppercase tracking-wider text-gray-600/80">
+            {stat}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Price/Value Section -->
+  <div class="fade-in-section mt-24 pb-24 text-center">
+    <p class="mx-auto max-w-3xl text-2xl font-medium leading-tight tracking-tight text-gray-900 opacity-90 md:text-4xl">
+      It's more than a bin, this smart technology pays for itself with
+    </p>
+
+    <h2 class="mt-8 text-6xl font-black text-gray-900 drop-shadow-[0_10px_10px_rgba(34,197,94,0.3)] animate-float">
+      <span id="count-up">0</span>%
+    </h2>
+    <p class="mt-4 text-xl text-gray-700">average cost reduction</p>
+  </div>
+</section>
+
+<script>
+  function animateNumber(id: string, targetValue: number, duration: number) {
+    const element = document.getElementById(id);
+    if (!element) return;
+    let startTimestamp: number | null = null;
+
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const currentValue = Math.floor(progress * targetValue);
+      element.innerText = currentValue.toString();
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    animateNumber('count-up', 40, 2500);
+  });
+</script>

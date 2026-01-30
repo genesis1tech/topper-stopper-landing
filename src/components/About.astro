@@ -1,0 +1,52 @@
+---
+import { Sparkles, Leaf, PlayCircle } from '@lucide/astro';
+---
+
+<section class="mx-auto max-w-7xl px-6 py-24">
+  <div class="grid items-center gap-12 lg:grid-cols-2">
+    <!-- Left Content -->
+    <div class="fade-in-section">
+      <div
+        class="mb-6 inline-flex items-center gap-2 rounded-full bg-gray-900/10 px-4 py-2 text-sm font-medium text-gray-900"
+      >
+        <Sparkles class="h-4 w-4" />
+        Our Story
+      </div>
+      <h2 class="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">Built for a Better Planet</h2>
+      <p class="mb-6 text-lg leading-relaxed text-gray-800/80">
+        Waste Wise Innovation began in 2023 with a simple question: <strong
+          >How can we help people recycle right at the bin?</strong
+        >
+      </p>
+      <p class="mb-8 text-lg leading-relaxed text-gray-800/80">
+        What started as fieldwork at major events in 2022 evolved into a team of sustainability
+        experts, engineers, operators, strategists, educators, and mentors designing smarter
+        recycling technology.
+      </p>
+      <div class="flex items-center gap-4">
+        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-900">
+          <Leaf class="h-6 w-6 text-white" />
+        </div>
+        <div>
+          <div class="font-semibold text-gray-900">Waste Wise Innovation</div>
+          <div class="text-sm text-gray-600">Revolutionizing recycling since 2023</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Visual -->
+    <div class="fade-in-section" style="transition-delay: 200ms;">
+      <div class="glass-panel rounded-[2rem] p-8">
+        <div
+          class="mb-6 flex aspect-video cursor-pointer items-center justify-center rounded-xl bg-gray-100 transition-transform hover:scale-[1.02]"
+        >
+          <PlayCircle class="h-20 w-20 text-gray-700 transition-transform hover:scale-110" />
+        </div>
+        <h3 class="mb-2 text-xl font-semibold text-gray-900">See Topper Stopper™ in Action</h3>
+        <p class="text-gray-700">
+          Watch how our technology is transforming recycling programs across the country.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

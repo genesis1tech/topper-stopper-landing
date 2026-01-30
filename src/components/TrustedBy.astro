@@ -1,0 +1,29 @@
+---
+import { Building2, Landmark, Briefcase, Ticket, Trophy } from '@lucide/astro';
+
+const sectors = [
+  { icon: Building2, label: 'Campuses' },
+  { icon: Landmark, label: 'Cities' },
+  { icon: Briefcase, label: 'Businesses' },
+  { icon: Ticket, label: 'Venues' },
+  { icon: Trophy, label: 'Stadiums' },
+];
+---
+
+<section class="mx-auto max-w-7xl border-y border-gray-900/10 px-6 py-12">
+  <div class="fade-in-section">
+    <p class="mb-8 text-center text-sm font-medium uppercase tracking-wider text-gray-700/70">
+      Trusted by forward-thinking organizations
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-8 opacity-70 md:gap-16">
+      {
+        sectors.map(({ icon: Icon, label }) => (
+          <div class="flex items-center gap-2 font-semibold text-gray-800">
+            <Icon class="h-6 w-6" />
+            {label}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
