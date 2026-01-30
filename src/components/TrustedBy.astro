@@ -10,20 +10,22 @@ const sectors = [
 ];
 ---
 
-<section class="mx-auto max-w-7xl border-y border-gray-900/10 px-6 py-12">
-  <div class="fade-in-section">
-    <p class="mb-8 text-center text-sm font-medium uppercase tracking-wider text-gray-700/70">
-      Trusted by forward-thinking organizations
-    </p>
-    <div class="flex flex-wrap items-center justify-center gap-8 opacity-70 md:gap-16">
-      {
-        sectors.map(({ icon: Icon, label }) => (
-          <div class="flex items-center gap-2 font-semibold text-gray-800">
-            <Icon class="h-6 w-6" />
-            {label}
-          </div>
-        ))
-      }
+<section class="border-y border-emerald-900/5 bg-gradient-to-r from-teal-50/50 via-emerald-50/30 to-teal-50/50 px-6 py-12">
+  <div class="mx-auto max-w-7xl">
+    <div class="fade-in-section">
+      <p class="mb-8 text-center text-sm font-medium uppercase tracking-wider text-emerald-900/60">
+        Trusted by forward-thinking organizations
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-8 opacity-70 md:gap-16">
+        {
+          sectors.map(({ icon: Icon, label }) => (
+            <div class="flex items-center gap-2 font-semibold text-emerald-900/80">
+              <Icon class="h-6 w-6" />
+              {label}
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>

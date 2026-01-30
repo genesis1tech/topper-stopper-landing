@@ -35,7 +35,7 @@ const { title, description = 'Smart bin technology that prevents recycling conta
     <title>{title}</title>
   </head>
   <body
-    class="min-h-screen overflow-x-hidden bg-gradient-to-b from-emerald-300 via-green-400 to-emerald-500 font-sans text-gray-900 selection:bg-gray-900 selection:text-white"
+    class="min-h-screen overflow-x-hidden bg-gradient-to-br from-emerald-100 via-teal-50 to-green-100 font-sans text-gray-900 selection:bg-emerald-700 selection:text-white"
   >
     <slot />
   </body>
@@ -47,15 +47,15 @@ const { title, description = 'Smart bin technology that prevents recycling conta
   }
 
   .glass-panel {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
   }
 
   .glass-panel-dark {
-    background: rgba(20, 83, 45, 0.85);
+    background: rgba(6, 78, 59, 0.9);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
