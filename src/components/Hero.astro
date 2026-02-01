@@ -7,9 +7,12 @@ import { Award } from '@lucide/astro';
     <div class="flex flex-col items-center gap-12 lg:flex-row">
       <!-- Left Content -->
       <div class="fade-in-section is-visible lg:w-1/2">
-        <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-900/10 px-4 py-2 text-sm font-medium text-emerald-900">
-          <Award class="h-4 w-4" />
-          Charlotte Hornets 2025 Innovation Summit Winner
+        <div class="award-badge mb-6 inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-emerald-900 shadow-lg">
+          <Award class="h-4 w-4 animate-pulse" />
+          <span class="relative">
+            Charlotte Hornets 2025 Innovation Summit Winner
+            <span class="absolute inset-0 -z-10 animate-shimmer rounded-full bg-gradient-to-r from-transparent via-emerald-200/50 to-transparent"></span>
+          </span>
         </div>
 
         <h1 class="mb-6 font-montserrat text-3xl font-thin leading-tight tracking-tighter text-gray-900 md:text-4xl">
@@ -49,3 +52,18 @@ import { Award } from '@lucide/astro';
     </div>
   </div>
 </header>
+
+<style>
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+</style>
