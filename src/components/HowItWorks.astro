@@ -1,27 +1,34 @@
 ---
-import { ScanEye, ShieldCheck, BarChart3 } from '@lucide/astro';
+import { ScanEye, ShieldCheck, BarChart3, Database } from '@lucide/astro';
 
 const steps = [
   {
     icon: ScanEye,
     step: 'Step 1',
-    title: 'Detect & Identify',
+    title: 'Scan',
     description:
-      'Smart sensors detect and identify materials being placed in the bin using advanced AI technology.',
+      'User scans barcode of recyclable item.',
   },
   {
     icon: ShieldCheck,
     step: 'Step 2',
-    title: 'Prevent Contamination',
+    title: 'Recycle',
     description:
-      'Non-recyclable items trigger visual cues and the access door stays closed, ensuring only correct materials enter.',
+      'Item is identified as recyclable and the access door opens.',
   },
   {
     icon: BarChart3,
     step: 'Step 3',
-    title: 'Collect & Analyze',
+    title: 'Reward',
     description:
-      'Real-time data on quantity, weight, and bin fullness is collected and sent via the RSMS monitoring system.',
+      'User is immediately given points in the tsRewards application.',
+  },
+  {
+    icon: Database,
+    step: 'Step 4',
+    title: 'Data',
+    description:
+      'Recycling data is collected and analyzed for insights.',
   },
 ];
 ---
@@ -37,7 +44,7 @@ const steps = [
       </p>
     </div>
 
-    <div class="grid gap-8 md:grid-cols-3">
+    <div class="grid gap-6 md:grid-cols-4">
       {
         steps.map(({ icon: Icon, step, title, description }, index) => (
           <div
