@@ -1,0 +1,109 @@
+---
+// Partner/affiliated organization logos ticker
+const logos = [
+  { name: 'Bank of America', src: 'https://logos-world.net/wp-content/uploads/2020/11/Bank-of-America-Emblem.png' },
+  { name: 'Charlotte Hornets', src: 'https://logos-world.net/wp-content/uploads/2020/05/Charlotte-Hornets-logo.png' },
+  { name: 'UNC Charlotte Co-Lab', src: 'https://media.licdn.com/dms/image/v2/D4E0BAQHjC4f7Fr4TDg/company-logo_200_200/B4EZUV7TAxGYAI-/0/1739829621063/unc_charlotte_co_lab_logo?e=2147483647&v=beta&t=OSX48Gcsj5CskyrAZjhEkLbqHao8FHSH8-WHl2b7aYM' },
+  { name: 'The Boost Pad', src: 'https://lirp.cdn-website.com/471e432d/dms3rep/multi/opt/The+Boost+Pad+Logo+%28500+x+250+px%29-1920w.png' },
+  { name: 'Share Charlotte', src: 'https://sharecharlotte.org/sites/default/files/2025-06/Logo_PNG_400.png' },
+  { name: 'Coca-Cola', src: 'https://www.beaconwealth.com/wp-content/uploads/2018/05/Coca-Cola.png' },
+  { name: 'Toronto Zoo', src: 'https://attractionsontario.ca/wp-content/uploads/2022/11/Toronto-Zoo-Logo-new-780x270.png' },
+  { name: 'CRA', src: 'https://zwconference.org/wp-content/uploads/2020/11/cra-2014-logo-tight.png' },
+  { name: 'Green Sports Alliance', src: 'https://www.pngkey.com/png/full/321-3215456_2016-the-green-sports-alliance-announced-today-that.png' },
+  { name: 'Innovation Barn', src: 'https://www.cra-recycle.org/wp-content/uploads/2023/05/Innovation-Barn-Logo-Horizontal-Spot-Color-1-1024x206-1.png' },
+];
+---
+
+<section 
+  class="bg-emerald-900 py-12 overflow-hidden"
+  aria-label="Partner organizations"
+>
+  <div class="mx-auto max-w-full">
+    <div class="marquee-container group relative">
+      {/* Scrolling track */}
+      <div class="marquee-track flex items-center gap-12 hover:[animation-play-state:paused]">
+        {/* First set of logos */}
+        {logos.map((logo, index) => (
+          <div class="logo-item flex-shrink-0 opacity-90 transition-opacity duration-300 hover:opacity-100">
+            {logo.src ? (
+              <div class="flex h-[90px] w-[180px] items-center justify-center rounded-lg bg-white/90 p-2 shadow-sm">
+                <img 
+                  src={logo.src} 
+                  alt={logo.name}
+                  class="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <div class="flex h-[90px] w-[180px] items-center justify-center rounded-lg bg-white/90 p-2">
+                <span class="text-sm font-medium text-slate-600">{logo.name}</span>
+              </div>
+            )}
+          </div>
+        ))}
+        
+        {/* Duplicated set for seamless loop */}
+        {logos.map((logo, index) => (
+          <div class="logo-item flex-shrink-0 opacity-90 transition-opacity duration-300 hover:opacity-100" aria-hidden="true">
+            {logo.src ? (
+              <div class="flex h-[90px] w-[180px] items-center justify-center rounded-lg bg-white/90 p-2 shadow-sm">
+                <img 
+                  src={logo.src} 
+                  alt=""
+                  class="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <div class="flex h-[90px] w-[180px] items-center justify-center rounded-lg bg-white/90 p-2">
+                <span class="text-sm font-medium text-slate-600">{logo.name}</span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+
+  /* Pause animation on hover */
+  .marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      gap: 2rem;
+    }
+
+    .logo-item {
+      opacity: 1;
+    }
+
+    /* Hide duplicated logos when motion is reduced */
+    .marquee-track > div:nth-child(n+11) {
+      display: none;
+    }
+  }
+
+</style>
