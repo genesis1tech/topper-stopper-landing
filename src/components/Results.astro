@@ -5,9 +5,9 @@ const stats = [
   { id: 'stat-pickups', value: 30, label: 'Fewer Pickups', sublabel: '15-30% reduction' },
   {
     id: 'stat-contamination',
-    value: 60,
+    value: 85,
     label: 'Contamination Reduction',
-    sublabel: 'Up to 40-60%',
+    sublabel: 'Up to 85%',
   },
   { value: '24/7', label: 'Real-Time Monitoring', sublabel: 'Always connected' },
   { value: '100%', label: 'Data Visibility', sublabel: 'Complete insights' },
@@ -86,7 +86,7 @@ const stats = [
         if (entry.isIntersecting && !statsAnimated) {
           statsAnimated = true;
           animateValue('stat-pickups', 0, 30, 2000);
-          animateValue('stat-contamination', 0, 60, 2000);
+          animateValue('stat-contamination', 0, 85, 2000);
         }
       });
     },
